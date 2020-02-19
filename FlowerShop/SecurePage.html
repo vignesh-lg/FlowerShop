@@ -5,8 +5,8 @@
 <head runat="server">
     <title>Flower Shop Page
     </title>
-    <link rel="stylesheet" type="text/css" href="MyStyle.css" />
-    <script src="ScriptFile.js"></script>
+    <link rel="stylesheet" type="text/css" href="FlowerShop_Design/MyStyle.css" />
+    <script src="FlowerShop_JavaScript/ScriptFile.js"></script>
     <style type="text/css">
     </style>
 </head>
@@ -16,7 +16,25 @@
         <h2>&nbsp;</h2>
             <div class="row">
         <div class="column">
-           <img src="img.png" class="Displaypicture" id="Displaypicture"> 
+           <img src="FlowerShop_Images/img.png" class="Displaypicture" id="Displaypicture"> 
+           <div>
+           <span class="taghelp" id="helpbox" style="display:none">Fill the Details in the Box to continue the payment</span>
+                <span class="tag" id="cardnumber1" style="display:none">* Enter the valid cardnumber</span>
+                <span class="tag" id="ccv1" style="display:none">* Enter the valid ccv number</span>
+               <span class="tag" id="yearandmonth1" style="display:none">* Enter the valid year and month</span>
+               <span class="tag" id="name1" style="display:none">* Enter the valid name</span>
+               </div>
+               <div style="margin-top:130px;">
+                <span class="taghelp" id="helperbox" style="display:none">Fill the Details in the Box to continue the payment</span>
+               <span class="tag" id="address1" style="display:none">*Enter the valid Address</span>
+               <span class="tag" id="city1" style="display:none">* Enter the valid city</span>
+                <span class="tag" id="region1" style="display:none;">* Enter the valid region</span>
+                <span class="tag" id="zipcode1" style="display:none">* Enter the valid pincode</span>
+                <span class="tag" id="country1" style="display:none">* Enter the valid country name</span>
+                <span class="tag" id="telephone1" style="display:none">* Enter the valid number</span>
+                <span class="tag" id="fax1" style="display:none">* Enter the valid fax number</span>
+                <span class="tag" id="emailID1" style="display:none">* Enter the valid email</span>
+           </div>
         </div>
         <div class="column_after">
              <p class="h3">Secure Payment Page</p>
@@ -37,7 +55,7 @@
                     <p><strong>£100.00</strong></p>
                 </div>   
                 <div class="column_form4">
-                    <p><img src="visa_PNG30.png" class="visa_image"/></p>
+                    <p><img src="FlowerShop_Images/visa_PNG30.png" class="visa_image"/></p>
                 </div>
            </div>
             <div class="form">
@@ -45,14 +63,14 @@
             <p>You must fill in fields marked with *</p>
             <div class="row_form">
                 <div class="column_form">
-                    <p>* Card number</p><span id="cardnumberspace" style="display:none">&nbsp;</span>
-                    <p>* <a href="https://www.cvvnumber.com/">Security code</a></p><span id="ccvspace" style="display:none">&nbsp;</span>
-                    <p>* Expiry date</p><span id="datespace" style="display:none">&nbsp;</span>
-                    <p  class="para_height">* Cardholder's name</p><span id="namespace" style="display:none">&nbsp;</span>
+                    <p id="cardnumberspace">* Card number</p>
+                    <p  id="ccvspace">* <a href="https://www.cvvnumber.com/">Security code</a></p>
+                    <p id="datespace">* Expiry date</p>
+                    <p  id="namespace" class="para_height">* Cardholder's name</p>
                 </div>
                 <div class="column_form_after">
-                    <p><input type="text" class="TextBox" ID="cardNumber" onchange="cardnumbervalidation()"/></p><span id="cardnumber" style="display:none"> Enter the validate cardnumber</span>
-                    <p><input class="TextBox1" ID="securityNumber" type="password" onchange="validateSecurityCode()"/></p><span id="ccv" style="display:none"> Enter the validate ccv number</span>
+                    <p><input type="text" class="TextBox" ID="cardNumber" onchange="cardnumbervalidation()"/></p>
+                    <p><input class="TextBox1" ID="securityNumber" type="password" onchange="validateSecurityCode()"/>
                     <p><select ID="months" onchange="ExpirydateValidation()" >
                         <option value=""></option>
                         <option Value="01">01</option>
@@ -76,32 +94,32 @@
                            <option Value="2025">2025</option>
                            <option Value="2026">2026</option>
                            <option Value="2027">2027</option>
-                           <option Value="2028">2028</option> </select></p><span id="yearandmonth" style="display:none"> Enter the validate year and month</span>
-                    <p><input type="text" class="TextBox" ID="cardHoldersName" onchange="CardholderNameValidation()"/></p><span id="name" style="display:none"> Enter the validate name</span>
+                           <option Value="2028">2028</option> </select></p>
+                    <p><input type="text" class="TextBox" ID="cardHoldersName" onchange="CardholderNameValidation()"/></p>
                 </div>
             </div> 
              <p class="title_card">Cardholder details</p>
              <p>You must fill in fields marked with *</p>
             <div class="row_form">
                 <div class="column_form">
-                    <p class="para_height">* Address</p><span id="addressspace" style="display:none">&ensp;</span>
-                    <p class="para_height">&ensp; Address 2</p><span id="address2" style="display:none">&ensp;</span>
-                    <p class="para_height">&ensp; Address 3</p><span id="address3" style="display:none">&ensp;</span>
-                    <p class="para_height">* Town/City</p><span id="cityspace" style="display:none">&ensp;</span>
-                    <p class="para_height">&ensp; Region</p><span id="regionspace" style="display:none;">&ensp;</span>
-                     <p class="para_height">* Postcode/Zip code</p><span id="pincodespace" style="display:none">&ensp;</span>
-                     <p class="para_height">* Country</p><span id="countryspace" style="display:none">&ensp;</span>
-                    <p class="para_height">&ensp; Telephone</p><span id="phonespace" style="display:none">&ensp;</span>
-                     <p class="para_height">&ensp; Fax</p><span id="faxspace" style="display:none">&ensp;</span>
-                     <p class="para_height">* Email address</p><span id="emailspace" style="display:none">&ensp;</span>
+                    <p class="para_height">* Address</p>
+                    <p id="addresssecond" class="para_height">&ensp; Address 2</p>
+                    <p id="address3" class="para_height">&ensp; Address 3</p>
+                    <p id="cityspace" class="para_height">* Town/City</p>
+                    <p id="regionspace" class="para_height">&ensp; Region</p>
+                     <p id="pincodespace" class="para_height">* Postcode/Zip code</p>
+                     <p id="countryspace" class="para_height">* Country</p>
+                    <p id="phonespace" class="para_height">&ensp; Telephone</p>
+                     <p id="faxspace" class="para_height">&ensp; Fax</p>
+                     <p id="emailspace" class="para_height">* Email address</p>
                 </div>
                 <div class="column_form_after" id="validate">
-                    <p><input type="text" Class="TextBox" ID="Address1" onchange="Addressvalidation()"/></p><span id="address" style="display:none">Enter the validate Address</span>
-                    <p><input class="TextBox" ID="Address"/></p><span id="address" style="display:none,color:red">Enter the validate Address</span>
-                     <p><input class="TextBox" ID="Address3"/></p><span id="address" style="display:none,color:red">Enter the validate Address</span>
-                     <p><input class="TextBox" ID="City" onchange="Townvalidation()"/></p><span id="city" style="display:none"> Enter the validate city</span>
-                     <p><input class="TextBox" ID="Region" onchange="RegionValidation()"/></p><span id="region" style="display:none;"> Enter the validate region</span>
-                     <p><input class="TextBox2" ID="pincode" onchange="Postalcodevalidation()"/></p><span id="zipcode" style="display:none"> Enter the validate pincode</span>
+                    <p><input type="text" Class="TextBox" ID="Address1" onchange="Addressvalidation()"/></p>
+                    <p><input class="TextBox" ID="Address"/></p>
+                     <p><input class="TextBox" ID="Address3"/></p>
+                     <p><input class="TextBox" ID="City" onchange="Townvalidation()"/></p>
+                     <p><input class="TextBox" ID="Region" onchange="RegionValidation()"/></p>
+                     <p><input class="TextBox2" ID="pincode" onchange="Postalcodevalidation()"/></p>
                     <p><select class="DropDownList" ID="Country" onchange="Countryvalidation()">
                         <option value=""></option>
                         <option Value="United Kingdom">United Kingdom</option>
@@ -110,20 +128,20 @@
                         <option Value="China">China</option>
                         <option Value="France">France</option>
                         <option Value="Germany">Germany</option>
-                        <option Value="Russia">Russia</option></select></p><span id="country" style="display:none"> Enter the validate country name</span>
-                    <p><input class="TextBox2" ID="Telephone" onchange="telephonevalidation()"/></p><span id="telephone" style="display:none"> Enter the validate number</span>
-                     <p><input class="TextBox2" ID="Fax" onchange="faxnumbervalidation()"/></p><span id="fax" style="display:none"> Enter the validate fax number</span>
-                     <p><input class="TextBox" ID="email" onchange="emailvalidation()"/></p><span id="emailID" style="display:none"> Enter the validate email</span>
+                        <option Value="Russia">Russia</option></select></p>
+                    <p><input class="TextBox2" ID="Telephone" onchange="telephonevalidation()"/></p>
+                     <p><input class="TextBox2" ID="Fax" onchange="faxnumbervalidation()"/></p>
+                     <p><input class="TextBox" ID="email" onchange="emailvalidation()"/></p>
                 </div>
             </div>
                 </div>
              <div class="row_form">
                 <div class="column_form">
-                   <label><input type="image" class="button_image" src="startAgain.png" id="Startagain" /></label><label class="Text" >START AGAIN</label>
-                    <p><input type="image" class="button_image" src="cancel.png" id="cancel" /><label>CANCEL</label></p>
+                   <label><input type="image" class="button_image" src="FlowerShop_Images/startAgain.png" id="Startagain" /></label><label class="Text" >START AGAIN</label>
+                    <p><input type="image" class="button_image" src="FlowerShop_Images/cancel.png" id="cancel" /><label>CANCEL</label></p>
                 </div>
                 <div class="column_form_after1" >
-                    <a href="#" type="image"  id="makepayment" onclick="Payment();"><img class="button_image1" src="gg.png" /></a><p class="button_position">MAKE PAYMENT</p>
+                    <a href="#" type="image"  id="makepayment" onclick="Payment();"><img class="button_image1" src="FlowerShop_Images/gg.png" /></a><p class="button_position">MAKE PAYMENT</p>
                 </div>
             </div> 
             <hr />
@@ -131,7 +149,7 @@
             <p class="Font">For more information visit our <a style="color:blue" href="http://support.worldpay.com/support/kb/bg/transactionmanagement/tm5100.html">Refunds and Returns Policy.</a></p>
              <div class="row_form">
                 <div class="column_form">
-                    <p><Img runat="server" src="pay.png" CssClass="pay" /></p>
+                    <p><Img runat="server" src="FlowerShop_Images/pay.png" CssClass="pay" /></p>
                 </div>
                 <div class="column_form_afterpicture">
                     <p class="button_position">For help with your payment visit the <a href="https://www.worldpay.com/en-gb/enterprise-support">WorldPay Help .</a></p>
@@ -140,8 +158,10 @@
         </div>
        
       <div class="column_form5">  
-        <p> <input type="image" ID="ImageButton1" src="gg1.png" width="30px" Height="30px"/></p>
-      
+        <p> 
+ <a href="#" type="image"  id="ImageButton1" onclick="ToHelp();"><img src="FlowerShop_Images/gg1.png" width="30px" Height="30px"/></a>
+       </p>
+       <a href="#" type="image"  id="ImageButton2" onclick="ToHelp();"><img src="FlowerShop_Images/gg1.png" width="30px" Height="30px" style="margin-top:210px;"/></a>
           </div>
     </div>
         <footer> Thank you for shopping at Flowershop. Have a nice day</footer>
